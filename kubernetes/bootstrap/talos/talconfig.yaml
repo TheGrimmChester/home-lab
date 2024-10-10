@@ -22,18 +22,18 @@ cniConfig:
 
 nodes:
   - hostname: "k8s-controller-0"
-    ipAddress: "192.168.1.29"
-    installDisk: "/dev/sda"
+    ipAddress: "192.168.1.17"
+    installDisk: "/dev/vda"
     machineSpec:
-      secureboot: true
-    talosImageURL: factory.talos.dev/installer-secureboot/5df5d31981a2d79bbd2f355df23610178ff7ca58bc6dcf84ee26d970c66f6fbc
+      secureboot: false
+    talosImageURL: factory.talos.dev/installer/97bf8e92fc6bba0f03928b859c08295d7615737b29db06a97be51dc63004e403
     controlPlane: true
     networkInterfaces:
       - deviceSelector:
           hardwareAddr: "bc:24:11:99:76:67"
         dhcp: false
         addresses:
-          - "192.168.1.29/24"
+          - "192.168.1.17/24"
         routes:
           - network: 0.0.0.0/0
             gateway: "192.168.1.254"
